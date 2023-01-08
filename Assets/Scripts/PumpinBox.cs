@@ -21,7 +21,10 @@ public class PumpinBox : MonoBehaviour
     private void Awake()
     {
         CoverCollider.enabled = false;
-        MyArrow.SetVisible(false);
+        if(MyArrow != null)
+        {
+            MyArrow.SetVisible(false);
+        }
     }
 
     private void OnEnable()

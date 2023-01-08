@@ -39,6 +39,7 @@ public class Arrow : MonoBehaviour
 
     public void SetVisible(bool visible)
     {
+        m_Renderer = GetComponent<MeshRenderer>();
         m_Visible = visible;
         m_Renderer.enabled = m_Visible;
     }
