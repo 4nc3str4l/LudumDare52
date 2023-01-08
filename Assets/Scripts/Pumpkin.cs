@@ -66,6 +66,7 @@ public class Pumpkin : MonoBehaviour
         DisablePhysics();
         ChangeState(PumpkinState.Stolen);
         _p.FeedbackOnPumpkinReleased(this);
+        UIStealingIndicator.Instance.Unregister(this);
     }
 
 
