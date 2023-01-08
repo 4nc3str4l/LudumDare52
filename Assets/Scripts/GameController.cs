@@ -235,7 +235,7 @@ namespace Assets.Scripts
         private IEnumerator PlayerDeathCorroutine()
         {
             JukeBox.Instance.PlaySound(JukeBox.Instance.GameOver, 0.6f);
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(15);
             SceneManager.LoadScene("GameOver");
             PlayerPrefs.SetString("reason", "You died");
         }
@@ -249,7 +249,7 @@ namespace Assets.Scripts
         private IEnumerator PumkinsStolenRoutine()
         {
             JukeBox.Instance.PlaySound(JukeBox.Instance.GameOver, 0.6f);
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(15);
             SceneManager.LoadScene("GameOver");
             PlayerPrefs.SetString("reason", "Pumpkins Stolen...");
         }
