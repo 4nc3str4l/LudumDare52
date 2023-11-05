@@ -13,7 +13,6 @@ Welcome to the official repository for **Halloween Harvest**, my first FPS game 
 ### Features
 
 - **Intuitive FPS Mechanics:** Easy to pick up and play, but challenging to master.
-- **Stylized Graphics:** A unique visual style that perfectly suits the Halloween theme.
 - **Progressive Difficulty:** Each level ups the ante, pushing you to sharpen your skills.
 - **48-Hour Development:** Every aspect of this game was crafted within the span of 48 intense hours.
 
