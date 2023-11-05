@@ -112,6 +112,14 @@ public class Shotgun : Weapon
                     {
                         pumpkin.OnShot(ray, hit);
                     }
+                    else
+                    {
+                        var fence = hit.collider.GetComponent<Fence>();
+                        if(fence != null)
+                        {
+                            fence.OnShot();
+                        }
+                    }
                 }
                 
 

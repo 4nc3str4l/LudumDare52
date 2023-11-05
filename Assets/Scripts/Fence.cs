@@ -74,4 +74,9 @@ public class Fence : MonoBehaviour
 
         HealthStatus.Resurrect();
     }
+    
+    public void OnShot()
+    {
+        HealthStatus.DealDmg(20);
+    }
 }
