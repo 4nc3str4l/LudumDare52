@@ -174,4 +174,13 @@ public class Pumpkin : MonoBehaviour
         CurrentState = PumpkinState.OnTheGround;
         Show();
     }
+    
+    public void OnShot(Ray ray, RaycastHit hit)
+    {
+        if(CurrentState == PumpkinState.OnMonster)
+        {
+            MonsterRelease();
+        }
+        m_RigidBody.AddForceAtPosition(ray.direction * 500f, hit.point);
+    }
 }

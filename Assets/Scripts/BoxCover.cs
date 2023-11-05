@@ -33,10 +33,15 @@ public class BoxCover : MonoBehaviour
             return;
         }
 
-
-        float distance = Vector3.Distance(Player.Instance.transform.position, transform.position);
-
-        if (distance > 20)
+        
+        Pumpkin closest = SceneInventory.Instance.GetClosestStorablePumpkin(transform.position);
+        float distance = Mathf.Infinity;
+        if (closest != null)
+        {
+            distance = Vector3.Distance(transform.position, closest.transform.position);
+        }
+        
+        if (distance > 10)
         {
             Close();
         }

@@ -105,6 +105,15 @@ public class Shotgun : Weapon
                     FXManager.Instance.SpawnExplosion(DebrisMaterial, 0.1f * hit.distance, hitPoint, Random.Range(0.15f, 0.35f));
                     FXManager.Instance.SpawnPunkingDebris(hitPoint, 5, Random.Range(0.01f, 0.05f), 3);
                 }
+                else
+                {
+                    var pumpkin = hit.collider.GetComponent<Pumpkin>();
+                    if(pumpkin != null)
+                    {
+                        pumpkin.OnShot(ray, hit);
+                    }
+                }
+                
 
                 FXManager.Instance.SpawnExplosion(null, 0.1f * hit.distance, hitPoint, Random.Range(0.15f, 0.25f));
                 FXManager.Instance.SpawnDebris(hitPoint, 5, Random.Range(0.01f, 0.05f), 3);

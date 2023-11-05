@@ -84,7 +84,28 @@ public class SceneInventory : MonoBehaviour
         return result;
     }
 
-
+    public Pumpkin GetClosestStorablePumpkin(Vector3 _position)
+    {
+        float minDist = Mathf.Infinity;
+        Pumpkin result = null;
+        foreach (var pumpkin in AllPumpkins)
+        {
+            // Skip harvested pumpkins and the ones that are being carried
+            if(pumpkin.CurrentState == PumpkinState.Harvested ||
+               pumpkin.CurrentState == PumpkinState.OnMonster ||
+               pumpkin.CurrentState == PumpkinState.Stolen)
+            {
+                continue;
+            }
+            float dist = Vector3.Distance(_position, pumpkin.transform.position);
+            if (dist < minDist)
+            {
+                minDist = dist;
+                result = pumpkin;
+            }
+        }
+        return result;
+    }
 
     private void GameController_OnStatusChanged(GameStatus obj)
     {
